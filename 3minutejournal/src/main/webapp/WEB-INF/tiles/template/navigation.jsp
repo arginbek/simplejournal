@@ -18,32 +18,33 @@
 		<div class="row">
 
 			<ul id="nav" class="nav">
-				<li><a href="<spring:url value="/Home"/>">Home</a></li>
+				<li>Language : <a href="?language=mn_MN">Mongolian</a>|<a href="?language=en_US">English</a></li>
+				<li><a href="<spring:url value="/Home"/>"><spring:message code="menu.home"/></a></li>
 
 				<security:authorize access="isAuthenticated()">
 					<li><a href="<spring:url value='/login' />"
-						class="btn btn-default pull-right"> Add Event</a></li>
+						class="btn btn-default pull-right"> <spring:message code="menu.event.add"/></a></li>
 				</security:authorize>
 				
 				<security:authorize access="isAuthenticated()">
 					<li><a href="<spring:url value='/login' />"
-						class="btn btn-default pull-right"> View Events</a></li>
+						class="btn btn-default pull-right"> <spring:message code="menu.events.view"/></a></li>
 				</security:authorize>
 				
 				<security:authorize access="isAuthenticated()">
 					<li><a href="<spring:url value='/login' />"
-						class="btn btn-default pull-right"> Lab </a></li>
+						class="btn btn-default pull-right"> <spring:message code="menu.lab"/> </a></li>
 				</security:authorize>
 				
 				<security:authorize access="isAuthenticated()">
 					<li><a href="<spring:url value='/login' />"
-						class="btn btn-default pull-right"> Blog </a></li>
+						class="btn btn-default pull-right"> <spring:message code="menu.blog"/> </a></li>
 				</security:authorize>
 
 				
 				<security:authorize access="isAnonymous()">
 					<li><a href="<spring:url value='/login' />"
-						class="btn btn-default pull-right"> Login</a></li>
+						class="btn btn-default pull-right"> <spring:message code="menu.login"/></a></li>
 				</security:authorize>
 
 
