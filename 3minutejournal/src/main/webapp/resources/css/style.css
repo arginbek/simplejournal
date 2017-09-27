@@ -1503,6 +1503,62 @@ footer .copyright {
 }
 #go-top a:hover { background: #7BA857; }
 
+/* Table Design */
+
+#centerTable{
+	padding: 20px;
+}
+
+#box-table-a
+{
+	font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+	font-size: 12px;
+	margin: 5%;
+	width: 90%;
+	text-align: left;
+	border-collapse: collapse;
+}
+#box-table-a th
+{
+	font-size: 13px;
+	font-weight: normal;
+	padding: 8px;
+	background: #9FCC7F;
+    border-top: 4px solid #9FCC7F;
+    border-bottom: 1px solid #fff;
+    color: #fff;
+}
+#box-table-a td
+{
+	padding: 8px;
+	background: rgba(159, 204, 127, 0.45); 
+	border-bottom: 1px solid #fff;
+	color: #009;
+	border-top: 1px solid transparent;
+}
+#box-table-a tr:hover td
+{
+	background: #9FCC7F;
+	color: #339;
+}
+
+
+/* Buttons Designs */
+
+a.edit{
+	background-color:#70a431;
+	color:white;
+	padding: 2px 18px;
+    border-radius: 4px;
+	
+}
+
+a.delete{
+	background-color:red;
+	color:white;
+	padding: 2px 10px;
+    border-radius: 4px;
+}
 
 
 

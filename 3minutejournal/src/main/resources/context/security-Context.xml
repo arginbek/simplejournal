@@ -16,7 +16,7 @@
 <!-- security:http enables security filter mechanism...name space configuration is activated -->
 <!-- use-expressions enables URL level authorization - allows SPEL syntax-->
 	<security:http use-expressions="true">
-	
+	  
 	<!-- if  non-standard ports for HTTP and/or HTTPS, you can specify them here  -->
 <!-- 	    <security:port-mappings>
       		<security:port-mapping http="9080" https="9443"/>
@@ -57,8 +57,10 @@
 	             token-validity-seconds="86400" remember-me-parameter="keepMe"/>
 	
 <!-- Version 4.0 + enables CSRF so if we want to disable-->
-<!-- 		<security:csrf disabled="true"/> -->
+		<security:csrf disabled="true"/>
  	</security:http>
+ 	
+
  
 	
  <!-- Database security "custom queries are because we have used our own schema...	-->

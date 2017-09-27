@@ -3,6 +3,10 @@
 	uri="http://www.springframework.org/security/tags"%>
 
 
+<meta name="_csrf" content="${_csrf.token}"/>
+<meta name="_csrf_header" content="${_csrf.headerName}"/>
+
+
 <link href="${pageContext.request.contextPath}/resource/css/style.css"
 	rel="stylesheet" />
 
@@ -41,6 +45,9 @@
 						class="btn btn-default pull-right"> <spring:message code="menu.blog"/> </a></li>
 				</security:authorize>
 
+				<li><a href="<spring:url value='/blogManagement/posts' />"
+						class="btn btn-default pull-right"> Blog Management </a></li>
+				
 				
 				<security:authorize access="isAnonymous()">
 					<li><a href="<spring:url value='/login' />"

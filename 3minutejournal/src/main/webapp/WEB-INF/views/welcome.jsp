@@ -7,6 +7,9 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Welcome</title>
+
+<link href="${pageContext.request.contextPath}/resource/css/style.css"/>
+
 </head>
 <body>
 	<section>

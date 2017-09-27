@@ -4,13 +4,13 @@
 
 
 
-<h2>THis is THe header</h2>
+		<h2>THis is THe header</h2>
 
 		<div class="jumbotron">
 			<h1>
 				<tiles:insertAttribute name="heading" />
 			</h1>
-			<p>
+			<p>							
 				<tiles:insertAttribute name="tagline" />
-			</p>
-		</div>
+			</p>	
+		</div>					
