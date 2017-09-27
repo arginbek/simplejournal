@@ -2,117 +2,110 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 
+
+
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<link rel="stylesheet"
-	href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+	
+	<link href="<c:url value="/resources/css/style.css" />" rel="stylesheet">
 <title>Products</title>
 </head>
 <body>
 	<section>
-		<div class="jumbotron">
-			<div class="container">
+		<div>
+			<div>
 				<h1>Valued Registers</h1>
 				<p>Add a new one
 				<p>
 			</div>
 		</div>
 	</section>
-	<section class="container">
-		<form:form modelAttribute="newRegister" class="form-horizontal">
+	<section>
+		<form:form modelAttribute="newRegister">
 			<fieldset>
 				<legend>User Sign UP Form</legend>
-
-				<form:errors path="*" cssClass="alert alert-danger" element="div" />
-				<div class="form-group">
-					<label class="control-label col-lg-2" for="firstName">First
+				<!-- Hiden filed hilds the value of id so that we can use it for updating -->
+				<form:hidden path="id" />
+				<form:errors path="*" />
+				<div>
+					<label for="firstName">First
 						Name</label>
-					<div class="col-lg-10">
+					<div >
 						<form:input id="firstName" path="firstName" type="text"
-							class="form:input-large" />
-						<form:errors path="firstName" cssClass="text-danger" />
+							 />
+						<form:errors path="firstName" />
 					</div>
 				</div>
 
-				<div class="form-group">
-					<label class="control-label col-lg-2" for="lastName">Last
+				<div>
+					<label for="lastName">Last
 						Name</label>
-					<div class="col-lg-10">
-						<form:input id="lastName" path="lastName" type="text"
-							class="form:input-large" />
-						<form:errors path="lastName" cssClass="text-danger" />
+					<div >
+						<form:input id="lastName" path="lastName" type="text" />
+						<form:errors path="lastName" />
 					</div>
 				</div>
 
-				<div class="form-group">
-					<label class="control-label col-lg-2" for="email">Email</label>
-					<div class="col-lg-10">
-						<div class="form:input-prepend">
-							<form:input id="email" path="email" type="text"
-								class="form:input-large" />
-							<form:errors path="email" cssClass="text-danger" />
+				<div>
+					<label for="email">Email</label>
+					<div >
+						<div>
+							<form:input id="email" path="email" type="text"/>
+							<form:errors path="email"/>
 						</div>
 					</div>
 				</div>
 
-				<div class="form-group">
-					<label class="control-label col-lg-2" for="userName">User
+				<div>
+					<label for="userName">User
 						Name</label>
-					<div class="col-lg-10">
-						<div class="form:input-prepend">
-							<form:input id="username" path="userCredentials.username"
-								type="text" class="form:input-large" />
-							<form:errors path="userCredentials.username"
-								cssClass="text-danger" />
+					<div>
+						<div>
+							<form:input id="username" path="userCredentials.username" type="text"/>
+							<form:errors path="userCredentials.username" />
 						</div>
 					</div>
 				</div>
 
-				<div class="form-group">
-					<label class="control-label col-lg-2" for="password">Password</label>
-					<div class="col-lg-10">
-						<div class="form:input-prepend">
-							<form:password id="password" path="userCredentials.password"
-								class="form:input-large" />
-							<form:errors path="userCredentials.password"
-								cssClass="text-danger" />
+				<div >
+					<label for="password">Password</label>
+					<div>
+						<div>
+							<form:password id="password" path="userCredentials.password"/>
+							<form:errors path="userCredentials.password" />
 						</div>
 					</div>
 				</div>
 
 
-				<div class="form-group">
-					<label class="control-label col-lg-2" for="verifyPassword">Verify
+				<div >
+					<label for="verifyPassword">Verify
 						Password</label>
-					<div class="col-lg-10">
-						<div class="form:input-prepend">
-							<form:password path="userCredentials.verifyPassword"
-								class="form:input-large" />
-							<form:errors path="userCredentials.verifyPassword"
-								cssClass="text-danger" />
+					<div >
+						<div >
+							<form:password path="userCredentials.verifyPassword" />
+							<form:errors path="userCredentials.verifyPassword"/>
 						</div>
 					</div>
 				</div>
 
-				<div class="form-group">
-					<label class="control-label col-lg-2" for="authority">Role</label>
-					<div class="col-lg-10">
-						<div class="form:input-prepend">
+				<div>
+					<label for="authority">Role</label>
+					<div >
+						<div >
 							<form:input path="userCredentials.authority[0].authority"
-								type="text" value="ROLE_ADMIN" class="form:input-large" />
-							<form:errors path="userCredentials.authority[0].authority"
-								cssClass="text-danger" />
+								type="text" value="ROLE_ADMIN" />
+							<form:errors path="userCredentials.authority[0].authority" />
 						</div>
 					</div>
 				</div>
 				
 				<form:hidden path="userCredentials.enabled" value="TRUE" />
 
-				<div class="form-group">
-					<div class="col-lg-offset-2 col-lg-10">
-						<input type="submit" id="btnAdd" class="btn btn-primary"
-							value="Add" />
+				<div>
+					<div >
+						<input type="submit" id="btnAdd" value="Save" />
 					</div>
 				</div>
 

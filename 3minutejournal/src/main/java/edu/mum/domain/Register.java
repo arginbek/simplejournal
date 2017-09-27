@@ -41,7 +41,7 @@ public class Register {
 		this.email = email;
 	}
 
-	@OneToOne(fetch = FetchType.LAZY)
+	@OneToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "register_id")
 	UserCredentials userCredentials;
 
@@ -75,6 +75,12 @@ public class Register {
 
 	public void setUserCredentials(UserCredentials userCredentials) {
 		this.userCredentials = userCredentials;
+	}
+
+	@Override
+	public String toString() {
+		return "Register [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email
+				+ ", userCredentials=" + userCredentials + "]";
 	}
 
 }

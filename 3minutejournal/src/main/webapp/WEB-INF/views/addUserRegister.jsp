@@ -21,7 +21,7 @@
 		<form:form  modelAttribute="newRegister" class="form-horizontal" >
 			<fieldset>
 				<legend>User Sign UP Form</legend>
-
+				<form:hidden path="id"  />
 				<form:errors path="*" cssClass="alert alert-danger" element="div"/>
 				<div class="form-group">
 					<label class="control-label col-lg-2" for="firstName">First Name</label>
@@ -86,7 +86,7 @@
 
 				<div class="form-group">
 					<div class="col-lg-offset-2 col-lg-10">
-						<input type="submit" id="btnAdd" class="btn btn-primary" value ="Add"/>
+						<input type="submit" id="btnAdd" class="btn btn-primary" value ="Save"/>
 					</div>
 				</div>
 				

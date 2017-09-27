@@ -17,18 +17,18 @@ public class RegisterServiceImpl implements edu.mum.service.RegisterService {
 	
  	@Autowired
 	private RegisterRepository registerRepository;
-
+ 	
  	@Autowired
  	UserCredentialsService credentialsService;
 
- 	//@PreAuthorize("hasRole('ROLE_ADMIN')")
+ 	@PreAuthorize("hasRole('ROLE_ADMIN')")
  	    public void save( Register register) {  		
 		registerRepository.save(register);
 	}
 	
  	
     @Override
- 	//@PreAuthorize("hasRole('ROLE_ADMIN')")
+ 	@PreAuthorize("hasRole('ROLE_ADMIN')")
        	public void saveFull( Register register) {  		
   		credentialsService.save(register.getUserCredentials());
   		registerRepository.save(register);
@@ -41,6 +41,13 @@ public class RegisterServiceImpl implements edu.mum.service.RegisterService {
 
  	public Register findOne(Long id) {
 		return registerRepository.findOne(id);
+	}
+
+
+	@Override
+	public void delete(Long id) {
+		registerRepository.delete(id);
+		
 	}
 	
 	
