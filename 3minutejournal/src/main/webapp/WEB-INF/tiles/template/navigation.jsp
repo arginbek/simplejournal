@@ -26,7 +26,7 @@
 				<li><a href="<spring:url value="/Home"/>"><spring:message code="menu.home"/></a></li>
 
 				<security:authorize access="isAuthenticated()">
-					<li><a href="<spring:url value='/login' />"
+					<li><a href="<spring:url value='/addEvent' />"
 						class="btn btn-default pull-right"> <spring:message code="menu.event.add"/></a></li>
 				</security:authorize>
 				

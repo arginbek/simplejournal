@@ -18,15 +18,14 @@ public class HomeController {
 		return "welcome";
 	}
 	
-	@ModelAttribute ("homeTestOrder")
-	 public String testOrder() {
-		
-		// test interceptor Order		
-		System.out.println("CONTROLLER @MODELATTRIBUTE PREHANDLE");
-
-		return "This is CONTROLLER ORDER!";
-	}
-
+	// @ModelAttribute ("homeTestOrder")
+	// public String testOrder() {
+	//
+	// // test interceptor Order
+	// System.out.println("CONTROLLER @MODELATTRIBUTE PREHANDLE");
+	//
+	// return "This is CONTROLLER ORDER!";
+	// }
 
  
 }

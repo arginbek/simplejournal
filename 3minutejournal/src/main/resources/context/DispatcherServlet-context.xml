@@ -51,10 +51,10 @@
 	</bean>
 
 	<mvc:interceptors>
-		<mvc:interceptor>
-			<mvc:mapping path="/**" />
-			<bean class="mum.edu.interceptor.VolunteerInterceptor" />
-		</mvc:interceptor>
+<!-- 		<mvc:interceptor> -->
+<!-- 			<mvc:mapping path="/**" /> -->
+<!-- 			<bean class="mum.edu.interceptor.VolunteerInterceptor" /> -->
+<!-- 		</mvc:interceptor> -->
 		<bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
 			<property name="paramName" value="language" />
 		</bean>

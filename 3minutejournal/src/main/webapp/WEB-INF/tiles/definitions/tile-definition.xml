@@ -12,6 +12,12 @@
 		<put-attribute name="body" value="" />
 		<put-attribute name="footer" value="/WEB-INF/tiles/template/footer.jsp" />
 	</definition>
+	
+	<definition name="addEvent" extends="baseLayout">
+		<put-attribute name="title" value="Add Event" />
+		<put-attribute name="tagline" value="Add an event" />
+		<put-attribute name="body" value="/WEB-INF/views/addEvent.jsp" />
+	</definition>
 
  	<definition name="welcome" extends="baseLayout">
 		<put-attribute name="title" value="Welcome" />

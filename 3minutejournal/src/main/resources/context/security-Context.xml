@@ -29,6 +29,7 @@
 	<!-- COMMENT out the following to see @Service METHOD level authorization -->
 	 <!--  <security:intercept-url pattern="/members/add" access="hasRole('ROLE_ADMIN')"/>  	
 	  <security:intercept-url pattern="/members" access="hasAnyRole('ROLE_ADMIN','ROLE_USER')"  /> -->
+	  <security:intercept-url pattern="/addEvent" access="hasAnyRole('ROLE_ADMIN','ROLE_USER')"  />
 <!-- Switch to HTTPS -->
  <!-- 	  <security:intercept-url pattern="/login" access="isAnonymous()" requires-channel="https"/>
  	  <security:intercept-url pattern="/logout" access="isAuthenticated()" requires-channel="http"/>
@@ -42,7 +43,7 @@
 		            Version 4 got rid of all of them -->
   <!-- comment out the next few lines for BASIC Login -->
   		<security:form-login 
- 		 login-page="/login" 
+ 		 login-page="/login"
 			    default-target-url="/welcome"    
                always-use-default-target="true"   
                authentication-failure-url="/loginfailed"/>
