@@ -21,14 +21,12 @@ public class RegisterServiceImpl implements edu.mum.service.RegisterService {
  	@Autowired
  	UserCredentialsService credentialsService;
 
- 	@PreAuthorize("hasRole('ROLE_ADMIN')")
  	    public void save( Register register) {  		
 		registerRepository.save(register);
 	}
 	
  	
     @Override
- 	@PreAuthorize("hasRole('ROLE_ADMIN')")
        	public void saveFull( Register register) {  		
   		credentialsService.save(register.getUserCredentials());
   		registerRepository.save(register);

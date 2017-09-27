@@ -11,7 +11,7 @@
 
 <!-- enable Method level [vs URL level] authorization  This work for ROOT WEB APPLICATION Level scanned components
       Does NOT recognize WEB Application level components - for THAT  need to place enable line in Dispatcher-servlet-->
-	<!-- <security:global-method-security pre-post-annotations="enabled"/> -->	
+	 <security:global-method-security pre-post-annotations="enabled"/> 	
 
 <!-- security:http enables security filter mechanism...name space configuration is activated -->
 <!-- use-expressions enables URL level authorization - allows SPEL syntax-->
@@ -49,7 +49,7 @@
  <!-- END of comment out  for BASIC Login -->
  
     
-         <security:logout logout-success-url="/logout" 
+         <security:logout logout-success-url="/welcome" 
           delete-cookies="JSESSIONID" />    
        
  		   <!-- enable remember me -->

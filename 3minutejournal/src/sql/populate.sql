@@ -10,4 +10,7 @@ INSERT INTO  `MEMBER` (firstname, lastname,age,title,membernumber, member_id) VA
 INSERT INTO `MEMBER` (firstname, lastname,age,title,membernumber,member_id) VALUES ('Allen','Rench',123,'Torque Master', 8733,'guest');
  
 INSERT INTO  `REGISTER` (firstname, lastname,email,register_id) VALUES ('Curious','George','yared@gmail.com', 'admin');
-INSERT INTO  `REGISTER` (firstname, lastname,email,register_id) VALUES ('Allen','Rench','mustefa@gmail.com','guest');					
+INSERT INTO  `REGISTER` (firstname, lastname,email,register_id) VALUES ('Allen','Rench','mustefa@gmail.com','guest');	
+
+INSERT INTO feedback(subject,message,userName) VALUES ('Interesting site','please keep it up, its good','admin');
+INSERT INTO feedback(subject,message,userName) VALUES ('Need a ride','I need a ride to home','guest');					
