@@ -3,8 +3,8 @@
 	uri="http://www.springframework.org/security/tags"%>
 
 
-<meta name="_csrf" content="${_csrf.token}"/>
-<meta name="_csrf_header" content="${_csrf.headerName}"/>
+<meta name="_csrf" content="${_csrf.token}" />
+<meta name="_csrf_header" content="${_csrf.headerName}" />
 
 
 <link href="${pageContext.request.contextPath}/resource/css/style.css"
@@ -22,36 +22,44 @@
 		<div class="row">
 
 			<ul id="nav" class="nav">
-				<li>Language : <a href="?language=mn_MN">Mongolian</a>|<a href="?language=en_US">English</a></li>
-				<li><a href="<spring:url value="/Home"/>"><spring:message code="menu.home"/></a></li>
+				<li>Language : <a href="?language=mn_MN">Mongolian</a>|<a
+					href="?language=en_US">English</a></li>
+				<li><a href="<spring:url value="/"/>"><spring:message
+							code="menu.home" /></a></li>
 
 				<security:authorize access="isAuthenticated()">
 					<li><a href="<spring:url value='/addEvent' />"
-						class="btn btn-default pull-right"> <spring:message code="menu.event.add"/></a></li>
-				</security:authorize>
-				
-				<security:authorize access="isAuthenticated()">
-					<li><a href="<spring:url value='/login' />"
-						class="btn btn-default pull-right"> <spring:message code="menu.events.view"/></a></li>
-				</security:authorize>
-				
-				<security:authorize access="isAuthenticated()">
-					<li><a href="<spring:url value='/login' />"
-						class="btn btn-default pull-right"> <spring:message code="menu.lab"/> </a></li>
-				</security:authorize>
-				
-				<security:authorize access="isAuthenticated()">
-					<li><a href="<spring:url value='/login' />"
-						class="btn btn-default pull-right"> <spring:message code="menu.blog"/> </a></li>
+						class="btn btn-default pull-right"> <spring:message
+								code="menu.event.add" /></a></li>
 				</security:authorize>
 
-				<li><a href="<spring:url value='/blogManagement/posts' />"
+				<security:authorize access="isAuthenticated()">
+					<li><a href="<spring:url value='/login' />"
+						class="btn btn-default pull-right"> <spring:message
+								code="menu.events.view" /></a></li>
+				</security:authorize>
+
+				<security:authorize access="isAuthenticated()">
+					<li><a href="<spring:url value='/login' />"
+						class="btn btn-default pull-right"> <spring:message
+								code="menu.lab" />
+					</a></li>
+				</security:authorize>
+
+
+				<security:authorize access="hasRole('ROLE_ADMIN')">
+					<li><a href="<spring:url value='/blogManagement/posts' />"
 						class="btn btn-default pull-right"> Blog Management </a></li>
-				
-				
+				</security:authorize>
+
+
+				<li><a href="<spring:url value='/blog' />"
+					class="btn btn-default pull-right"> <spring:message code ="menu.blog" /></a></li>
+
 				<security:authorize access="isAnonymous()">
 					<li><a href="<spring:url value='/login' />"
-						class="btn btn-default pull-right"> <spring:message code="menu.login"/></a></li>
+						class="btn btn-default pull-right"> <spring:message
+								code="menu.login" /></a></li>
 				</security:authorize>
 				
 				<security:authorize access="isAnonymous()">

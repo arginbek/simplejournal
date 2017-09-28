@@ -28,12 +28,13 @@
 
 	<div id="content-wrap">
 		<div id="centerTable">
+		<h2 style="color:#9fcc7f; margin-bottom: 40px;">Posts</h2>
 
 			<table id="box-table-a" summary="Employee Pay Sheet">
 				<thead>
 					<tr>
-						<th scope="col">Title</th>
-						<th scope="col">Date</th>
+						<th scope="col" class="custom">Title</th>
+						<th scope="col" class="custom">Date</th>
 						<th scope="col">Content</th>
 						<th scope="col">Edit</th>
 						<th scope="col">Delete</th>
@@ -44,8 +45,8 @@
 						<tr>
 							<td>${post.title}</td>
 							<td>${post.date}</td>
-							<td>${post.desciption}</td>
-							<td><a class="edit" href="#">Edit</a></td>
+							<td><p id="postDescription">${post.desciption}</p></td>
+							<td><a class="edit" href="<spring:url value='/blogManagement/editPost?id=${post.id}' />">Edit</a></td>
 							<td><a class="delete"
 								onclick="removeFromCart('${post.id}');">Delete</a></td>
 						</tr>

@@ -59,6 +59,13 @@
 	
 <!-- Version 4.0 + enables CSRF so if we want to disable-->
 		<security:csrf disabled="true"/>
+		
+		
+<!-- Blog Management URL Authorization		 -->
+		
+		<security:intercept-url pattern="/blogManagement/**" 
+		access="hasRole('ROLE_ADMIN')"/>
+		
  	</security:http>
  	
 

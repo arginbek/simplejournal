@@ -25,7 +25,7 @@ public class BlogPost {
 	@Column(name="Date")
 	Date date;
 	
-	@NotNull
+	@NotEmpty
 	@Column(name="DESCRIPTION", columnDefinition = "TEXT")
 	String desciption;
 

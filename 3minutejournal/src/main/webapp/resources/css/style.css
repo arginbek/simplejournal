@@ -1856,6 +1856,10 @@ footer .copyright {
 	color: #fff;
 }
 
+#box-table-a th.custom{
+	width:150px;
+}
+
 #box-table-a td {
 	padding: 8px;
 	background: rgba(159, 204, 127, 0.45);
@@ -1884,4 +1888,28 @@ a.delete {
 	padding: 2px 10px;
 	border-radius: 4px;
 	cursor: pointer;
+}
+
+/* Post Form Design */
+
+.postField{
+	width:90%;
+}
+
+textarea.postField{
+	height:300px;
+}
+#centerForm{
+	margin-left:9%;
+	margin-top:20px;
+}
+.alert-danger{
+	color:red;
+	text-transform: capitalize;
+}
+
+#postDescription{
+	height:20px;
+    line-height:20px; /* Height / no. of lines to display */
+    overflow:hidden;
 }
