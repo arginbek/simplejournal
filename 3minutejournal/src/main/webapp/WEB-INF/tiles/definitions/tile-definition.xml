@@ -96,5 +96,17 @@
 		<put-attribute name="tagline" value="Detail of a feadback" />
 		<put-attribute name="body" value="/WEB-INF/views/feedbackDetail.jsp" />
 	</definition>
+	
+	<definition name="AddFeedback" extends="baseLayout">
+		<put-attribute name="title" value="addfeedback" />
+		<put-attribute name="tagline" value="add a new feadback" />
+		<put-attribute name="body" value="/WEB-INF/views/AddFeedback.jsp" />
+	</definition>
+	
+	<definition name="member" extends="baseLayout">
+		<put-attribute name="title" value="addUser" />
+		<put-attribute name="tagline" value="add a new user" />
+		<put-attribute name="body" value="/WEB-INF/views/member.jsp" />
+	</definition>
 	 	
 </tiles-definitions>

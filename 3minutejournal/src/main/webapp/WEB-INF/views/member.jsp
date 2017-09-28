@@ -1,59 +1,46 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<link rel="stylesheet"
-	href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
-<title>Members</title>
+<link href="<c:url value="/resources/css/style.css" />" rel="stylesheet">
+<title>Feedback Detail</title>
 </head>
 <body>
-	<section>
-		<div class="jumbotron">
+	<div id="content-wrap">
+		<div id="centerTable">
 
-			<spring:url value="/logout" var="logout_url" />
-			<form:form action="${logout_url}" class="form-horizontal"
-				method="POST">
-				<div class="form-group">
-					<div class="col-lg-offset-2 col-lg-10">
-						<input type="submit" id="btnAdd"
-							class="btn btn-danger btn-mini  pull-right" value="Logout" />
-					</div>
-				</div>
-			</form:form>
+			<table id="box-table-a" summary="Employee Pay Sheet">
+				<thead>
+					<tr>
+						<th scope="col">First Name</th>
+						<th scope="col">Last Name</th>
+						<th scope="col">Email</th>
+						<th scope="col">User Name</th>
+						<th scope="col">Edit</th>
+						<th scope="col">Delete</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>${member.firstName}</td>
+						<td>${member.lastName}</td>
+						<td>${member.email}</td>
+						<td>${member.userCredentials.username}</td>
+						<td><spring:url value="/registers/editUser/${member.id}"
+								var="useredit" /> <a class="edit" href="${useredit}">Edit</a></td>
+						<td><spring:url value="/registers/deleteUser/${member.id}"
+								var="userdelete" /> <a class="delete" href="userdelete">Delete</a></td>
+					</tr>
+				</tbody>
+			</table>
+			<a href="<spring:url value="/registers/addAdmin" />">Add a new
+				User</a>
 		</div>
 
+	</div>
 
-	</section>
-
-	<section class="container">
-		<div class="row">
-			<div class="col-sm-6 col-md-6" style="padding-bottom: 15px">
-				<div class="thumbnail">
-					<div class="caption">
-
-						<h3>
-							First Name - <span style="color: blue;">${member.firstName}</span>
-						</h3>
-						<h3>
-							Last Name - <span style="color: blue;">${member.lastName}</span>
-						</h3>
-						<h3>
-							Email - <span style="color: blue;">${member.email}</span>
-						</h3>
-						<h3>
-							User Name - <span style="color: blue;">
-								${member.userCredentials.username}</span>
-						</h3>
-						<a href="<spring:url value="/registers/editUser/${member.id}" />" class="btn btn-primary  btn-mini  ">Edit</a>
-						<a href="<spring:url value="/registers/deleteUser/${member.id}" />" class="btn btn-danger btn-mini  ">Delete</a>
-					</div>
-				</div>
-			</div>
-
-		</div>
-	</section>
 </body>
 </html>

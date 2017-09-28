@@ -75,7 +75,7 @@ public class FeedbackController {
 	@RequestMapping(value = "/deleteFeedback/{id}", method = RequestMethod.GET)
 	public String deleteFeedbacks(@PathVariable("id") String id, Model model, RedirectAttributes redirectAttribute) {
 		FeedBackService.delete(Long.parseLong(id));
-		return "feedbackList";
+		return "redirect:/feedback/feedbackList";
 	}
 	/*@RequestMapping(value = "/deleteFeedbacks/{id}", method = RequestMethod.GET)
 	public String deleteFeedbacks(@PathVariable("id") String id, Model model, RedirectAttributes redirectAttribute) {
