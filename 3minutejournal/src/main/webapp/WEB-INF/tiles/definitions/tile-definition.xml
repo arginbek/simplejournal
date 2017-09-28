@@ -80,6 +80,18 @@
 		<put-attribute name="body" value="/WEB-INF/views/login.jsp" />
 	</definition>
 	
+	<definition name="viewEvents" extends="baseLayout">
+		<put-attribute name="title" value="Events" />
+		<put-attribute name="tagline" value="View Your Events" />
+		<put-attribute name="body" value="/WEB-INF/views/viewEvents.jsp" />
+	</definition>
+	
+	<definition name="editEvent" extends="baseLayout">
+		<put-attribute name="title" value="Edit Event" />
+		<put-attribute name="tagline" value="Edit an event" />
+		<put-attribute name="body" value="/WEB-INF/views/editEvent.jsp" />
+	</definition>
+	
 	<definition name="members" extends="baseLayout">
 		<put-attribute name="title" value="registers" />
 		<put-attribute name="tagline" value="List of users" />

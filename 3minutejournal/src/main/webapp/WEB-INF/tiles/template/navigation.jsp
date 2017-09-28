@@ -22,10 +22,8 @@
 		<div class="row">
 
 			<ul id="nav" class="nav">
-				<li>Language : <a href="?language=mn_MN">Mongolian</a>|<a
-					href="?language=en_US">English</a></li>
-				<li><a href="<spring:url value="/"/>"><spring:message
-							code="menu.home" /></a></li>
+				<li>Lang: <a href="?language=mn_MN">MN</a>|<a href="?language=en_US">EN</a></li>
+				<li><a href="<spring:url value="/welcome"/>"><spring:message code="menu.home"/></a></li>
 
 				<security:authorize access="isAuthenticated()">
 					<li><a href="<spring:url value='/addEvent' />"
@@ -34,7 +32,7 @@
 				</security:authorize>
 
 				<security:authorize access="isAuthenticated()">
-					<li><a href="<spring:url value='/login' />"
+					<li><a href="<spring:url value='/viewEvents' />"
 						class="btn btn-default pull-right"> <spring:message
 								code="menu.events.view" /></a></li>
 				</security:authorize>
@@ -84,7 +82,7 @@
 				
 				<security:authorize access="isAuthenticated()">
 					<li><a href="<spring:url value='/logout' />"
-						class="btn btn-default pull-right"> Logout</a></li>
+						class="btn btn-default pull-right"> <spring:message code="menu.logout"/></a></li>
 				</security:authorize>
 				
 				

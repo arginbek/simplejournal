@@ -10,7 +10,9 @@
 </head>
 <body>
 <div class="container">
-    <form:form modelAttribute="newEvent" action="addEvent" method="POST">
+	<spring:url var="actionurl" value="/editEvent"></spring:url>
+    <form:form commandName="event" action="${actionurl}" method="POST">
+    <form:hidden path="id"/>
     <p>
   		<form:errors path="*" cssStyle="color : red;" /> 
     </p>

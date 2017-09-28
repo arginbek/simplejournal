@@ -27,6 +27,7 @@ public class Event {
 	private Long id;
 
 	@NotEmpty(message="{NotEmpty}")
+	@Column(length=1000)
 	private String description;
 
 	@OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.DETACH)
