@@ -16,9 +16,9 @@
 
 	<div id="content-wrap">
 
-		<div class="row">
+		<div class="row" id="blogRow">
 
-			<div id="main" class="eight columns">
+			<div class="eight columns" id="blogColumn">
 
 				<c:forEach items="${posts}" var="post">
 					<article class="entry"> <header class="entry-header">
@@ -36,7 +36,7 @@
 
 					</header>
 
-					<div class="entry-content">
+					<div class="entry-content" id="entryContentWrap">
 						<p>${post.desciption}</p>
 					</div>
 

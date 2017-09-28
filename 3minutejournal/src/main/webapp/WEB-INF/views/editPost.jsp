@@ -20,7 +20,7 @@
 	<div id="content-wrap">
 		<div id="centerForm">
 
-			<form:form modelAttribute="editPost">
+			<form:form commandName="editPost">
 				<fieldset>
 					<h2 style="color:#9fcc7f; margin-bottom: 40px;">Edit Post</h2>
 					<form:errors path="*" class="alert-danger" element="div" />

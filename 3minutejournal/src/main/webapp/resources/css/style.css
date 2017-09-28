@@ -1468,6 +1468,7 @@ ul#nav ul li a {
 	margin: 24px 0 18px;
 }
 
+
 .entry .tags {
 	margin-top: 18px;
 	font-family: 'opensans-regular', sans-serif;
@@ -1835,6 +1836,7 @@ footer .copyright {
 /* Table Design */
 #centerTable {
 	padding: 20px;
+	margin-top: 50px;
 }
 
 #box-table-a {
@@ -1901,7 +1903,7 @@ textarea.postField{
 }
 #centerForm{
 	margin-left:9%;
-	margin-top:20px;
+	margin-top:70px;
 }
 .alert-danger{
 	color:red;
@@ -1913,3 +1915,19 @@ textarea.postField{
     line-height:20px; /* Height / no. of lines to display */
     overflow:hidden;
 }
+
+#entryContentWrap{
+	height: 170px;
+    line-height: 34px;
+    overflow: hidden;
+}
+
+#blogRow{
+	margin-top:30px;
+}
+
+#blogColumn{
+	padding-left: 60px;
+    padding-top: 30px;
+}
+

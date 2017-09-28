@@ -18,9 +18,9 @@
    ================================================== -->
    <div id="content-wrap">
 
-   	<div class="row">
+   	<div class="row" >
 
-   		<div id="main" class="eight columns">
+   		<div class="eight columns" id="blogColumn">
 
    			<article class="entry">
 
@@ -45,7 +45,7 @@
 						</div> 
 					</div>
 
-					<div class="entry-content">
+					<div class="entry-content" >
 						<p class="lead">${post.desciption}</p>
 					</div>
 
