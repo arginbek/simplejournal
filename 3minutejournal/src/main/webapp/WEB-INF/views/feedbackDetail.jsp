@@ -1,37 +1,17 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<link rel="stylesheet"
-	href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
-<title>Members</title>
+<link href="<c:url value="/resources/css/style.css" />" rel="stylesheet">
+<title>Feedback Detail</title>
 </head>
 <body>
-	<section>
-	<div class="jumbotron">
-		
-		<a href="<spring:url value="/feedback/add" />" class="btn btn-primary btn-mini pull-right">Add a new FeedBack</a> 
-		<spring:url value="/logout" var="logout_url" />
-		<form:form action="${logout_url}" class="form-horizontal"
-			method="POST">
-			<div class="form-group">
-				<div class="col-lg-offset-2 col-lg-10">
-					<input type="submit" id="btnAdd"
-						class="btn btn-danger btn-mini  pull-right" value="Logout" />
-				</div>
-			</div>
-		</form:form>
 
-	</section>
 
-	<section class="container">
+<%-- 	<section class="container">
 	<div class="row">
 		<div class="col-sm-6 col-md-9" style="padding-bottom: 15px">
 			<div class="thumbnail">
@@ -48,5 +28,39 @@
 
 	</div>
 	</section>
+	
+	<a href="<spring:url value="/feedback/add" />" class="btn btn-primary btn-mini pull-right">Add a new FeedBack</a>  --%>
+	
+	
+		<div id="content-wrap">
+		<div id="centerTable">
+
+			<table id="box-table-a" summary="Employee Pay Sheet">
+				<thead>
+					<tr>
+						<th scope="col">Subject</th>
+						<th scope="col">Message</th>
+						<th scope="col">Edit</th>
+						<th scope="col">Delete</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+							<td>${feedbackDetail.subject}</td>
+							<td>${feedbackDetail.message}</td>
+							<td><spring:url value="/feedback/editFeedback/${feedbackDetail.id}" var="feedbackedit"/>
+							<a class="edit" href="${feedbackedit}">Edit</a></td>
+							<td><spring:url value="/feedback/deleteFeedback/${feedbackDetail.id}" var="feedbackdelete"/>
+							<a class="edit" href="${feedbackdelete}">Edit</a></td>
+						</tr>
+				</tbody>
+			</table>
+			<a href="<spring:url value="/feedback/add" />">Add a new FeedBack</a>
+		</div>
+
+	</div>
 </body>
 </html>
+
+
+	

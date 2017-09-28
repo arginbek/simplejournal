@@ -26,7 +26,7 @@ public class Register {
 
 	@Column(length = 16)
 	@NotEmpty
-	@Size(min = 5, max = 9, message = "{EmptyOrSize}")
+	@Size(min = 2, max = 50, message = "{EmptyOrSize}")
 	private String lastName;
 
 	@Email

@@ -64,11 +64,22 @@
 						class="btn btn-default pull-right"> Add Admin</a></li>
 				</security:authorize>
 				
+				<security:authorize access="hasRole('ROLE_ADMIN')">
+					<li><a href="<spring:url value='/registers' />"
+						class="btn btn-default pull-right"> Users</a></li>
+				</security:authorize>
+				
+				<security:authorize access="hasRole('ROLE_ADMIN')">
+					<li><a href="<spring:url value='/feedback/feedbackList'  />"
+						class="btn btn-default pull-right"> Feedbacks</a></li>
+				</security:authorize>
+				
 				<security:authorize access="isAuthenticated()">
 					<li><a href="<spring:url value='/logout' />"
 						class="btn btn-default pull-right"> Logout</a></li>
 				</security:authorize>
-
+				
+				
 
 			</ul>
 			<!-- end #nav -->

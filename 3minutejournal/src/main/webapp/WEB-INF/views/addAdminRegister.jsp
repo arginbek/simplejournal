@@ -12,19 +12,11 @@
 <title>Products</title>
 </head>
 <body>
-	<section>
-		<div>
-			<div>
-				<h1>Valued Registers</h1>
-				<p>Add a new one
-				<p>
-			</div>
-		</div>
-	</section>
+</br></br>
 	<section>
 		<form:form modelAttribute="newRegister">
 			<fieldset>
-				<legend>User Sign UP Form</legend>
+				<legend><h4>User Sign UP Form</h4></legend>
 				<!-- Hiden filed hilds the value of id so that we can use it for updating -->
 				<form:hidden path="id" />
 				<form:errors path="*" />

@@ -54,5 +54,22 @@
 		<put-attribute name="tagline" value="Enter your Credentials" />
 		<put-attribute name="body" value="/WEB-INF/views/login.jsp" />
 	</definition>
+	
+	<definition name="members" extends="baseLayout">
+		<put-attribute name="title" value="registers" />
+		<put-attribute name="tagline" value="List of users" />
+		<put-attribute name="body" value="/WEB-INF/views/members.jsp" />
+	</definition>
+	<definition name="feedbackList" extends="baseLayout">
+		<put-attribute name="title" value="feedbacks" />
+		<put-attribute name="tagline" value="List of feadbacks" />
+		<put-attribute name="body" value="/WEB-INF/views/feedbackList.jsp" />
+	</definition>
+	
+	<definition name="feedbackDetail" extends="baseLayout">
+		<put-attribute name="title" value="feedback" />
+		<put-attribute name="tagline" value="Detail of a feadback" />
+		<put-attribute name="body" value="/WEB-INF/views/feedbackDetail.jsp" />
+	</definition>
 	 	
 </tiles-definitions>

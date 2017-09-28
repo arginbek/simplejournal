@@ -1,48 +1,50 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
-<%@ taglib prefix="security" uri="http://www.springframework.org/security/tags"%>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"  %>
- 
+
+
+
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<link rel="stylesheet"
-	href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+<link href="<c:url value="/resources/css/style.css" />" rel="stylesheet">
 <title>Members</title>
 </head>
 <body>
-	<section>
-		<div class="jumbotron">
-			
- 					<a href="<spring:url value="/registers/addAdmin" />" class="btn btn-primary btn-mini pull-right">Add a new one</a>	
- 				
- 				<spring:url value="/logout" var="logout_url" />				
-  			<form:form action="${logout_url}" class="form-horizontal" method="POST" >
-  					<div class="form-group">
-					<div class="col-lg-offset-2 col-lg-10">
-						<input type="submit" id="btnAdd" class="btn btn-danger btn-mini  pull-right" value ="Logout"/>
-					</div>
-				</div>
-			</form:form>
- 
- 		</div>
-	</section>
+	<div id="content-wrap">
+		<div id="centerTable">
 
-	<section class="container">
-		<div class="row">
-			<c:forEach items="${members}" var="member">
-				<div class="col-sm-6 col-md-3" style="padding-bottom: 15px">
-					<div class="thumbnail">
- 						<div class="caption">
-							<h4>First Name - ${member.firstName}</h4>
-							<h4>Last Name -  ${member.lastName}</h4>
-						 <a href="<spring:url value="/registers/${member.id}" />" class="btn btn-primary  btn-mini  ">View</a>
- 				</h4>
- 					</div>
-					</div>
-				</div>
-			</c:forEach>
+			<table id="box-table-a" summary="Employee Pay Sheet">
+				<thead>
+					<tr>
+						<th scope="col">First Name</th>
+						<th scope="col">Last Name</th>
+						<th scope="col">View In Detail</th>
+					</tr>
+				</thead>
+				<tbody>
+					<c:forEach items="${members}" var="member">
+						<tr>
+							<td>${member.firstName}</td>
+							<td>${member.lastName}</td>
+
+							<%-- <td><a href="<spring:url value="/registers/${member.id}" />">View</a></td>  --%>
+							<td><spring:url value="/registers/${member.id}" var="member"/>
+							<a class="edit" href="${member}">View Detail</a></td>
+						</tr>
+					</c:forEach>
+				</tbody>
+			</table>
+
+			<a href="<spring:url value="/registers/addAdmin" />">Add New User</a>
+
 		</div>
-	</section>
+
+	</div>
 </body>
 </html>
+
+
+
+
+
