@@ -38,15 +38,10 @@ INSERT INTO frequency (frequency) VALUES ('Commonplace');
 INSERT INTO frequency (frequency) VALUES ('Occasional');
 INSERT INTO frequency (frequency) VALUES ('Rare');
 INSERT INTO frequency (frequency) VALUES ('Never happened before');
-
-
  
-INSERT INTO  `MEMBER` (firstname, lastname,age,title,membernumber, member_id) VALUES ('Curious','George',12,'Boy Monkey', 8754,'admin');
-INSERT INTO `MEMBER` (firstname, lastname,age,title,membernumber,member_id) VALUES ('Allen','Rench',123,'Torque Master', 8733,'guest');
- 
-INSERT INTO  `REGISTER` (firstname, lastname,email,register_id) VALUES ('Curious','George','yared@gmail.com', 'admin');
-INSERT INTO  `REGISTER` (firstname, lastname,email,register_id) VALUES ('Allen','Rench','mustefa@gmail.com','guest');
-INSERT INTO  `REGISTER` (firstname, lastname,email,register_id) VALUES ('Argynbyek','Sheken','arginbek@gmail.com','bek');					
+INSERT INTO  `REGISTER` (firstname, lastname,email,register_id, hasImage) VALUES ('Curious','George','yared@gmail.com', 'admin', 0);
+INSERT INTO  `REGISTER` (firstname, lastname,email,register_id, hasImage) VALUES ('Allen','Rench','mustefa@gmail.com','guest', 0);
+INSERT INTO  `REGISTER` (firstname, lastname,email,register_id, hasIMage) VALUES ('Argynbyek','Sheken','arginbek@gmail.com','bek', 0);					
 
 INSERT INTO feedback(subject,message,userName) VALUES ('Interesting site','please keep it up, its good','admin');
 INSERT INTO feedback(subject,message,userName) VALUES ('Need a ride','I need a ride to home','guest');	

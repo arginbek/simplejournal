@@ -10,7 +10,7 @@
 <body>
 
 	<section>
-		<form:form modelAttribute="newRegister">
+		<form:form modelAttribute="newRegister" enctype="multipart/form-data" method="POST">
 			<fieldset>
 				<legend>
 					<h4>User Sign UP Form</h4>
@@ -75,6 +75,15 @@
 						</div>
 					</div>
 				</div>
+				
+				<div>
+            		<label for="userImage"><spring:message code="form.user.image"/></label>
+            		<form:input path="userImage" id="userImage" type="file"  />
+ 	
+ 		  			<div style="text-align: center;">
+ 						<form:errors path="userImage" cssStyle="color : red; " /> 
+ 					</div>
+       			</div>
 
 				<form:hidden path="userCredentials.enabled" value="TRUE" />
 				<form:hidden path="userCredentials.authority[0].authority"

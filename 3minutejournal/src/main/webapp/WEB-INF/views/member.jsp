@@ -31,8 +31,7 @@
 						<td>${member.userCredentials.username}</td>
 						<td><spring:url value="/registers/editUser/${member.id}"
 								var="useredit" /> <a class="edit" href="${useredit}">Edit</a></td>
-						<td><spring:url value="/registers/deleteUser/${member.id}"
-								var="userdelete" /> <a class="delete" href="userdelete">Delete</a></td>
+						<td><a class="delete" href="<spring:url value="/registers/deleteUser/${member.id}" />">Delete</a></td>
 					</tr>
 				</tbody>
 			</table>

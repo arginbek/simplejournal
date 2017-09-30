@@ -10,6 +10,9 @@
 <body>
 
 	<div>
+		<p>
+			${GreetingMessage}
+		</p>
 		<c:if test="${not empty error}">
 			<div>
 				<spring:message

@@ -1,5 +1,6 @@
 package edu.mum.domain;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -8,10 +9,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
+import javax.persistence.Transient;
 import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
+import org.springframework.web.multipart.MultipartFile;
 
 @Entity
 public class Register {
@@ -32,6 +35,9 @@ public class Register {
 	@Email
 	@NotEmpty
 	private String email;
+	
+	@Transient
+	private MultipartFile userImage;
 
 	public String getEmail() {
 		return email;
@@ -41,9 +47,11 @@ public class Register {
 		this.email = email;
 	}
 
-	@OneToOne(fetch = FetchType.EAGER)
+	@OneToOne(fetch = FetchType.EAGER, cascade=CascadeType.REMOVE)
 	@JoinColumn(name = "register_id")
 	UserCredentials userCredentials;
+	
+	private boolean hasImage;
 
 	public Long getId() {
 		return id;
@@ -75,6 +83,22 @@ public class Register {
 
 	public void setUserCredentials(UserCredentials userCredentials) {
 		this.userCredentials = userCredentials;
+	}
+
+	public MultipartFile getUserImage() {
+		return userImage;
+	}
+
+	public void setUserImage(MultipartFile userImage) {
+		this.userImage = userImage;
+	}
+
+	public boolean isHasImage() {
+		return hasImage;
+	}
+
+	public void setHasImage(boolean hasImage) {
+		this.hasImage = hasImage;
 	}
 
 	@Override
