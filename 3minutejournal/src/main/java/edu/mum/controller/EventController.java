@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
@@ -25,7 +24,6 @@ import edu.mum.domain.Feeling;
 import edu.mum.domain.Frequency;
 import edu.mum.domain.Type;
 import edu.mum.domain.UserCredentials;
-import edu.mum.repository.EventRepository;
 import edu.mum.service.DurationService;
 import edu.mum.service.EventService;
 import edu.mum.service.FeelingService;
@@ -73,8 +71,10 @@ public class EventController {
 	
 	@RequestMapping(value = "/editEvent", method = RequestMethod.POST)
 	public String editEvent(@Valid @ModelAttribute Event event, BindingResult result, Model model, SessionStatus status, Principal principal) {
-		if(result.hasErrors())
-			return "redirect:/editEvent/" + event.getId();
+		if(result.hasErrors()) {
+			model.addAttribute("event", event);
+			return "editEvent";
+		}
 		
 		event.setUser(userCredentialsService.findByUsername(principal.getName()));
 		eventService.save(event);
@@ -83,14 +83,12 @@ public class EventController {
 		return "redirect:/viewEvents";
 	}
 	
-	@RequestMapping(value = "/events/edit/{eventId}", method = RequestMethod.PUT)
+	@RequestMapping(value = "/events/remove/{eventId}", method = RequestMethod.PUT)
 	@ResponseStatus(value = HttpStatus.NO_CONTENT)
 	public void removeEvent(@PathVariable("eventId") Long eventId) {
 		eventService.delete(eventService.findOne(eventId));
 	}
 	
-	
-
 	@RequestMapping(value = "/addEvent", method = RequestMethod.GET)
 	public String addEvent(@ModelAttribute("newEvent") Event event, Model model) {
 		List<Feeling> feelings = feelingService.getAll();

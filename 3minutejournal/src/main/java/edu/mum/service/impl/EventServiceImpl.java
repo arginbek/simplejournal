@@ -35,7 +35,7 @@ public class EventServiceImpl implements EventService {
 
 	@Override
 	public List<Event> findByUserCredentials(UserCredentials user) {
-		return (List<Event>) eventRepository.findByUserCredentials(user);
+		return (List<Event>) eventRepository.findByUser(user);
 	}
 
 	@Override

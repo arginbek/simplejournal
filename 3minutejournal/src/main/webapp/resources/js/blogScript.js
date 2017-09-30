@@ -6,6 +6,7 @@
 $(document).ready(function(){
 
 	var contextRoot = "/" + window.location.pathname.split('/')[1];
+	alert(contextRoot);
 
 	removeFromCart = function(postId) {
 		

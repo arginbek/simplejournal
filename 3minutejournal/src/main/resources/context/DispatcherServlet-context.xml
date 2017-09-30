@@ -3,6 +3,7 @@
 	xmlns:security="http://www.springframework.org/schema/security"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
 	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:webflow-config="http://www.springframework.org/schema/webflow-config"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans 
 	    http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/security 
@@ -10,7 +11,9 @@
 		http://www.springframework.org/schema/context 
 		http://www.springframework.org/schema/context/spring-context.xsd
 		http://www.springframework.org/schema/mvc 
-		http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+		http://www.springframework.org/schema/mvc/spring-mvc.xsd 
+		http://www.springframework.org/schema/webflow-config 
+		http://www.springframework.org/schema/webflow-config/spring-webflow-config-2.3.xsd">
 
 	<mvc:annotation-driven validator="validator" />
 
@@ -51,10 +54,6 @@
 	</bean>
 
 	<mvc:interceptors>
-<!-- 		<mvc:interceptor> -->
-<!-- 			<mvc:mapping path="/**" /> -->
-<!-- 			<bean class="mum.edu.interceptor.VolunteerInterceptor" /> -->
-<!-- 		</mvc:interceptor> -->
 		<bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
 			<property name="paramName" value="language" />
 		</bean>
@@ -64,7 +63,7 @@
 		class="org.springframework.web.servlet.i18n.SessionLocaleResolver">
 		<property name="defaultLocale" value="en_US" />
 	</bean>
-
+	
 	<!-- Tiles Configuration -->
 
 	<bean id="tilesConfigurer"
@@ -75,9 +74,26 @@
 			</list>
 		</property>
 	</bean>
+	
+		<!-- Maps request paths to flows in the flowRegistry; -->
+	<bean id="flowHandlerMapping"
+		class="org.springframework.webflow.mvc.servlet.FlowHandlerMapping">
+		<property name="flowRegistry" ref="flowRegistry" />
+	</bean>
 
+	<bean id="flowHandlerAdapter"
+		class="org.springframework.webflow.mvc.servlet.FlowHandlerAdapter">
+		<property name="flowExecutor" ref="flowExecutor" />
+	</bean>
 
+	<webflow-config:flow-executor id="flowExecutor"
+		flow-registry="flowRegistry" />
 
+	<webflow-config:flow-registry id="flowRegistry" base-path="/WEB-INF/flows" flow-builder-services="flowBuilderServices">
+		<webflow-config:flow-location id="flowFeedback" path="feedback-flow.xml" />
+	</webflow-config:flow-registry>
+
+	<webflow-config:flow-builder-services id="flowBuilderServices" validator="validator" />
 
 </beans>
   

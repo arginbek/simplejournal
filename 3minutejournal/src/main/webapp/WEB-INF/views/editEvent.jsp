@@ -59,7 +59,7 @@
  		</div>
     </p>
     <p>
-        <input id="submit" type="submit" value="<spring:message code="form.event.btn.add"/>">
+        <input id="submit" type="submit" value="<spring:message code="form.event.btn.edit"/>">
     </p>
     </form:form>
 </div>

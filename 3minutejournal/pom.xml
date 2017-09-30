@@ -5,9 +5,6 @@
   <version>0.0.1-SNAPSHOT</version>
  <dependencyManagement>
  <dependencies>
-
-
-  
          <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-framework-bom</artifactId>
@@ -15,9 +12,6 @@
             <type>pom</type>
             <scope>import</scope>
         </dependency>
-        
-                
-
          <dependency>
             <groupId>io.spring.platform</groupId>
             <artifactId>platform-bom</artifactId>
@@ -25,7 +19,6 @@
             <type>pom</type>
             <scope>import</scope>
         </dependency>
-        
            <dependency>
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-bom</artifactId>
@@ -33,17 +26,13 @@
             <type>pom</type>
             <scope>import</scope>
 		</dependency>
-        
-        
    </dependencies>
    </dependencyManagement>
- 
  <dependencies>
   	<dependency>
   		<groupId>org.springframework</groupId>
   		<artifactId>spring-webmvc</artifactId>
   	</dependency>
-
    	<dependency>
   		<groupId>javax.servlet</groupId>
   		<artifactId>jstl</artifactId>
@@ -53,7 +42,6 @@
   		<artifactId>javax.servlet-api</artifactId>
   		<scope>provided</scope>
   	</dependency>
-
    	<dependency>
   		<groupId>commons-fileupload</groupId>
   		<artifactId>commons-fileupload</artifactId>
@@ -62,17 +50,14 @@
   		<groupId>org.codehaus.jackson</groupId>
   		<artifactId>jackson-mapper-asl</artifactId>
   	</dependency>
- 
     	<dependency>
   		<groupId>org.springframework.security</groupId>
   		<artifactId>spring-security-web</artifactId>
    	</dependency>
- 
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-config</artifactId>
           </dependency>
-   
     	<dependency>
   		<groupId>org.springframework.security</groupId>
   		<artifactId>spring-security-core</artifactId>
@@ -81,17 +66,14 @@
   		<groupId>org.springframework.security</groupId>
   		<artifactId>spring-security-taglibs</artifactId>
    	</dependency>
-  
     <dependency>
   		<groupId>org.springframework.data</groupId>
   		<artifactId>spring-data-jpa</artifactId>
    	</dependency>
-
     	<dependency>
   		<groupId>org.hibernate</groupId>
   		<artifactId>hibernate-entitymanager</artifactId>
    	</dependency>
-
 <dependency>
   		<groupId>javax.servlet.jsp</groupId>
   		<artifactId>jsp-api</artifactId>
@@ -102,25 +84,19 @@
   		<artifactId>tiles-extras</artifactId>
   		<version>3.0.3</version>
   	</dependency>
-
-
   	  	<dependency>
   		<groupId>cglib</groupId>
   		<artifactId>cglib-nodep</artifactId>
   		<version>2.2.2</version>
   	</dependency>
-
   	<dependency>
   		<groupId>mysql</groupId>
   		<artifactId>mysql-connector-java</artifactId>
   		</dependency>
-
 <dependency>
     <groupId>org.hibernate</groupId>
     <artifactId>hibernate-validator</artifactId>
 </dependency>
-
- 
  	<dependency>
   		<groupId>log4j</groupId>
   		<artifactId>log4j</artifactId>
@@ -129,6 +105,11 @@
 		<groupId>org.slf4j</groupId>
 		<artifactId>slf4j-log4j12</artifactId>
 	</dependency>
+	<dependency>
+  		<groupId>org.springframework.webflow</groupId>
+  		<artifactId>spring-webflow</artifactId>
+  		<version>2.3.3.RELEASE</version>
+  	</dependency>
    </dependencies>
 
      <properties>

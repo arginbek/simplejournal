@@ -1,5 +1,6 @@
 package edu.mum.domain;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.CascadeType;
@@ -18,8 +19,9 @@ import javax.validation.constraints.Past;
 import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.format.annotation.DateTimeFormat;
 
+@SuppressWarnings("serial")
 @Entity(name = "event")
-public class Event {
+public class Event implements Serializable{
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)

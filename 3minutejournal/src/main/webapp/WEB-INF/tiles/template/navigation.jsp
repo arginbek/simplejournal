@@ -37,14 +37,6 @@
 								code="menu.events.view" /></a></li>
 				</security:authorize>
 
-				<security:authorize access="isAuthenticated()">
-					<li><a href="<spring:url value='/login' />"
-						class="btn btn-default pull-right"> <spring:message
-								code="menu.lab" />
-					</a></li>
-				</security:authorize>
-
-
 				<security:authorize access="hasRole('ROLE_ADMIN')">
 					<li><a href="<spring:url value='/blogManagement/posts' />"
 						class="btn btn-default pull-right"> Blog Management </a></li>
@@ -75,9 +67,15 @@
 						class="btn btn-default pull-right"> Users</a></li>
 				</security:authorize>
 				
-				<security:authorize access="hasRole('ROLE_ADMIN')">
+				<security:authorize access="hasRole('ROLE_USER')">
 					<li><a href="<spring:url value='/feedback/feedbackList'  />"
 						class="btn btn-default pull-right"> Feedbacks</a></li>
+				</security:authorize>
+				
+				<security:authorize access="isAuthenticated()">
+					<li><a href="<spring:url value='/flowFeedback' />"
+						class="btn btn-default pull-right"> <spring:message
+								code="menu.event.add.feedback" /></a></li>
 				</security:authorize>
 				
 				<security:authorize access="isAuthenticated()">
